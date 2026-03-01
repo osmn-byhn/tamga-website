@@ -1,0 +1,184 @@
+.security-section {
+    padding: 8rem 0;
+    background: relative;
+}
+
+/* Subtle background accent for security */
+.security-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background: radial-gradient(circle at left center, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.security-header {
+    margin-bottom: 5rem;
+}
+
+.security-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.security-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secure-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    border-color: rgba(0, 255, 136, 0.2);
+    box-shadow: inset 0 0 40px rgba(0, 255, 136, 0.05);
+}
+
+.data-layer {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: var(--bg-color);
+    border: 2px solid var(--surface-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.db-icon {
+    color: var(--accent-blue);
+}
+
+.pbkdf2-badge {
+    position: absolute;
+    top: -15px;
+    right: -40px;
+    background: var(--accent-green);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+.encryption-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.5), transparent);
+    position: relative;
+}
+
+.encryption-line span {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+.top-line {
+    animation: scan-vertical 4s infinite linear;
+}
+
+.bottom-line {
+    animation: scan-vertical 4s infinite linear reverse;
+}
+
+.security-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.security-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.security-item:hover {
+    transform: translateX(10px);
+    border-left-color: var(--accent-green);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sec-icon {
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.icon-red {
+    color: #ff0055;
+}
+
+.icon-green {
+    color: var(--accent-green);
+}
+
+.icon-blue {
+    color: var(--accent-blue);
+}
+
+.security-item h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.security-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@keyframes scan-vertical {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .security-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .security-visual {
+        margin-bottom: 3rem;
+    }
+}
