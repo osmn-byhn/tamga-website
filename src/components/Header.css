@@ -30,7 +30,8 @@
 }
 
 .logo-icon {
-    color: var(--accent-green);
+    width: 45px;
+    height: 45px;
 }
 
 .logo-text {

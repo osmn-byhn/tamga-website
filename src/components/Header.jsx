@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Shield, Github, Download } from 'lucide-react';
 import './Header.css';
+import logo from "../../public/tamga.png"
 
 const Header = () => {
     const location = useLocation();
@@ -11,7 +12,7 @@ const Header = () => {
             <div className="header-container container">
                 <div className="logo">
                     <Link to="/" className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <Shield className="logo-icon" size={28} />
+                        <img src={logo} alt="Tamga Logo" className="logo-icon" />
                         <span className="logo-text">Tamga</span>
                     </Link>
                 </div>

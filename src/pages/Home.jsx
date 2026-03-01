@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Security from '../components/Security';
 import LatestVersion from '../components/LatestVersion';
+import AboutTamga from '../components/AboutTamga';
 
 const Home = () => {
     useEffect(() => {
@@ -20,7 +21,7 @@ const Home = () => {
         };
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
-        const elements = document.querySelectorAll('.feature-card, .security-item');
+        const elements = document.querySelectorAll('.feature-card, .security-item, .tamga-card');
         elements.forEach(el => observer.observe(el));
 
         return () => observer.disconnect();
@@ -30,6 +31,7 @@ const Home = () => {
         <main>
             <Hero />
             <LatestVersion />
+            <AboutTamga />
             <Features />
             <Security />
         </main>

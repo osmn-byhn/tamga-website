@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield } from 'lucide-react';
 import './Footer.css';
+import logo from "../../public/tamga.png"
 
 const Footer = () => {
     return (
@@ -9,7 +10,7 @@ const Footer = () => {
                 <div className="footer-content">
                     <div className="footer-brand">
                         <div className="logo">
-                            <Shield className="logo-icon" size={24} />
+                            <img src={logo} alt="Tamga Logo" className="logo-icon" />
                             <span className="logo-text">Tamga</span>
                         </div>
                         <p className="footer-description">
