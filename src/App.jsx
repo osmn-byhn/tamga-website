@@ -10,7 +10,6 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <Analytics />
       <div className="app-container">
         <Header />
         <Routes>
@@ -19,6 +18,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
+      <Analytics />
     </Router>
   );
 }
