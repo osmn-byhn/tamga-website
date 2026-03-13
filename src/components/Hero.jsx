@@ -1,8 +1,47 @@
 import React from 'react';
-import { ShieldCheck, ArrowRight, Lock, Key, Monitor, Download, Apple } from 'lucide-react';
+import { ShieldCheck, Lock, Key } from 'lucide-react';
+import { FaWindows, FaApple, FaLinux } from 'react-icons/fa6';
+import { GithubFetcher } from '@osmn-byhn/changelog-github-core';
 import './Hero.css';
 
 const Hero = () => {
+    const [downloads, setDownloads] = React.useState({
+        windows: "https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/Tamga-Setup-1.0.0.exe",
+        macos: "https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/tamga-1.0.0-arm64.dmg",
+        linuxDeb: "https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/tamga_1.0.0_amd64.deb",
+        linuxRpm: "https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/tamga-1.0.0-1.x86_64.rpm",
+        appImage: "https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/Tamga-1.0.0.AppImage"
+    });
+
+    React.useEffect(() => {
+        const fetchLatest = async () => {
+            try {
+                const fetcher = new GithubFetcher('osmn-byhn', 'tamga');
+                const releases = await fetcher.fetchReleases();
+                if (releases && releases.length > 0) {
+                    const latest = releases[0];
+                    const assets = latest.assets || [];
+
+                    const newDownloads = { ...downloads };
+
+                    assets.forEach(asset => {
+                        const name = asset.name.toLowerCase();
+                        if (name.endsWith('.exe')) newDownloads.windows = asset.browser_download_url;
+                        else if (name.endsWith('.dmg')) newDownloads.macos = asset.browser_download_url;
+                        else if (name.endsWith('.deb')) newDownloads.linuxDeb = asset.browser_download_url;
+                        else if (name.endsWith('.rpm')) newDownloads.linuxRpm = asset.browser_download_url;
+                        else if (name.endsWith('.appimage')) newDownloads.appImage = asset.browser_download_url;
+                    });
+
+                    setDownloads(newDownloads);
+                }
+            } catch (error) {
+                console.error("Failed to fetch latest release:", error);
+            }
+        };
+        fetchLatest();
+    }, []);
+
     return (
         <section className="hero">
             <div className="hero-background">
@@ -27,25 +66,30 @@ const Hero = () => {
 
                 <div className="hero-actions-container animate-fade-in-delayed" style={{ animationDelay: '0.4s' }}>
                     <div className="download-buttons">
-                        <a href="https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/Tamga-Setup-1.0.0.exe" className="btn btn-download-os">
-                            <Monitor size={18} />
+                        <a href={downloads.windows} className="btn btn-download-os">
+                            <FaWindows size={18} />
                             <span>Windows</span>
                             <span className="os-badge">.exe</span>
                         </a>
-                        <a href="https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/tamga-1.0.0-arm64.dmg" className="btn btn-download-os">
-                            <Apple size={18} />
+                        <a href={downloads.macos} className="btn btn-download-os">
+                            <FaApple size={20} />
                             <span>macOS</span>
                             <span className="os-badge">.dmg</span>
                         </a>
-                        <a href="https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/tamga_1.0.0_amd64.deb" className="btn btn-download-os">
-                            <Download size={18} />
+                        <a href={downloads.linuxDeb} className="btn btn-download-os">
+                            <FaLinux size={18} />
                             <span>Linux (Deb)</span>
                             <span className="os-badge">.deb</span>
                         </a>
-                        <a href="https://github.com/osmn-byhn/tamga/releases/download/v1.0.0/tamga-1.0.0-1.x86_64.rpm" className="btn btn-download-os">
-                            <Download size={18} />
+                        <a href={downloads.linuxRpm} className="btn btn-download-os">
+                            <FaLinux size={18} />
                             <span>Linux (Rpm)</span>
                             <span className="os-badge">.rpm</span>
+                        </a>
+                        <a href={downloads.appImage} className="btn btn-download-os">
+                            <FaLinux size={18} />
+                            <span>Linux (AppImage)</span>
+                            <span className="os-badge">.AppImage</span>
                         </a>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import Features from '../components/Features';
 import Security from '../components/Security';
 import LatestVersion from '../components/LatestVersion';
 import AboutTamga from '../components/AboutTamga';
+import Gallery from '../components/Gallery';
 
 const Home = () => {
     useEffect(() => {
@@ -32,6 +33,7 @@ const Home = () => {
             <Hero />
             <LatestVersion />
             <AboutTamga />
+            <Gallery />
             <Features />
             <Security />
         </main>
