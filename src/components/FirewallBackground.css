@@ -1,0 +1,141 @@
+.firewall-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+}
+
+[data-theme="light"] .firewall-bg-container {
+    opacity: 0.15;
+}
+
+/* A high-tech grid acting as a digital wall */
+.firewall-wall {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+        linear-gradient(var(--surface-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--surface-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+    mask-image: radial-gradient(ellipse at center, black 10%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 10%, transparent 70%);
+    animation: pulse-wall 8s ease-in-out infinite;
+}
+
+@keyframes pulse-wall {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+/* A horizontal scanning laser line representing firewall analysis */
+.scanning-laser {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-blue);
+    box-shadow: 0 0 15px var(--accent-blue), 0 0 30px var(--accent-blue);
+    opacity: 0.8;
+    animation: scan-laser 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes scan-laser {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+/* Vertical data streams (matrix style) */
+.data-streams {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.stream {
+    position: absolute;
+    top: -100px;
+    width: 1px;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, var(--accent-green), transparent);
+    opacity: 0;
+    box-shadow: 0 0 10px var(--accent-green);
+}
+
+.stream-1 { left: 20%; animation: stream-fall 4s infinite linear; animation-delay: 0s; }
+.stream-2 { left: 45%; animation: stream-fall 5s infinite linear; animation-delay: 2s; }
+.stream-3 { left: 60%; animation: stream-fall 3.5s infinite linear; animation-delay: 1.5s; }
+.stream-4 { left: 80%; animation: stream-fall 6s infinite linear; animation-delay: 0.5s; }
+.stream-5 { left: 10%; animation: stream-fall 4.5s infinite linear; animation-delay: 3s; }
+
+@keyframes stream-fall {
+    0% {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+/* A glowing barrier at the bottom */
+.shield-base {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 100px;
+    background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: pulse-base 4s infinite alternate;
+}
+
+@keyframes pulse-base {
+    0% {
+        opacity: 0.5;
+        transform: translateX(-50%) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.1);
+    }
+}

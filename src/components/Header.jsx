@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Shield, Github, Download } from 'lucide-react';
+import { Shield, Github, Download, Sun, Moon } from 'lucide-react';
 import './Header.css';
 import logo from "../../public/tamga.png"
 
-const Header = () => {
+const Header = ({ theme, toggleTheme }) => {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
     return (
@@ -30,6 +30,9 @@ const Header = () => {
                 </nav>
 
                 <div className="header-actions">
+                    <button className="btn btn-outline theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme" style={{ padding: '0.6rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                    </button>
                     <a href="https://github.com/osmn-byhn/tamga" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
                         <Github size={18} />
                         <span>Star on GitHub</span>

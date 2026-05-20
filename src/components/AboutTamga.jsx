@@ -13,12 +13,15 @@ const AboutTamga = () => {
                         </svg>
                     </div>
                     <div className="tamga-content">
-                        <h2 className="section-title">Where Does the Name "Tamga" <span className="text-gradient">Come From?</span></h2>
+                        <h2 className="section-title">Why the name <span className="text-gradient">"Tamga"?</span></h2>
                         <p className="tamga-description">
-                            <strong>Tamga</strong> (or damga) is an ancient seal with origins in old Turkic and Mongolic cultures, symbolizing the independence, identity, and belonging of tribes and communities. Throughout history, our ancestors used their tamgas to mark what belonged to them and to ensure trust.
+                            <strong>Tamga</strong> comes from ancient Turkic culture and means a seal or tribal mark used to represent identity, ownership, and authority. Throughout history, our ancestors used their tamgas to mark what belonged to them and to ensure trust.
                         </p>
                         <p className="tamga-description">
-                            In the digital world, <strong>Tamga</strong> serves as a <em>cryptographic seal</em> that proves the immutability, security, and exclusive ownership of your data and identity. Just like the marks left by our ancestors, we protect your digital footprints with the highest security standards.
+                            In the digital world, <strong>Tamga</strong> serves as a <em>cryptographic seal</em>. We believe that your most sensitive digital assets should be protected without demanding blind trust in cloud servers.
+                        </p>
+                        <p className="tamga-description" style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--text-color)', marginTop: '1rem' }}>
+                            Tamga = A digital seal. Your data is yours. Your control. 🔐
                         </p>
                     </div>
                 </div>

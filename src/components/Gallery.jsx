@@ -3,10 +3,10 @@ import './Gallery.css';
 
 const galleryItems = [
     {
-        id: 'dashboard',
-        title: 'Central Dashboard',
-        description: 'Your secure gateway. View and manage all your protected passwords, keys, and codes at a glance with a clean, intuitive interface designed for efficiency.',
-        image: '/gallery/home.png',
+        id: 'vault',
+        title: 'Central Password Vault',
+        description: 'Your secure gateway. View and manage all your protected passwords at a glance with a clean, intuitive interface designed for efficiency.',
+        image: '/gallery/passwords.png',
         tag: 'Overview'
     },
     {
@@ -20,22 +20,29 @@ const galleryItems = [
         id: 'env',
         title: 'Environment Manager',
         description: 'A developer\'s dream. Safely store, manage, and toggle between your .env files for different projects without exposing secrets in your codebase.',
-        image: '/gallery/env.png',
+        image: '/gallery/envs.png',
         tag: 'Development'
     },
     {
-        id: 'vault',
-        title: 'Encrypted Vault',
-        description: 'Military-grade AES-256-GCM encryption for all your sensitive data. Everything is stored locally on your device with Zero-Knowledge architecture.',
-        image: '/gallery/passkey.png',
-        tag: 'Privacy'
+        id: 'health',
+        title: 'Security Audit & Health',
+        description: 'Monitor your digital security posture. Detect leaked passwords via HIBP and identify weak or reused credentials instantly.',
+        image: '/gallery/password-health.png',
+        tag: 'Auditing'
+    },
+    {
+        id: 'generator',
+        title: 'Smart Password Generator',
+        description: 'Create cryptographically strong, unique passwords instantly. Tailor length and complexity to meet the strictest security requirements.',
+        image: '/gallery/passwords-generator.png',
+        tag: 'Utility'
     },
     {
         id: 'settings',
-        title: 'Full Control',
-        description: 'Customize your security experience. Fine-tune vault settings, appearance, and security thresholds to match your specific workflow.',
-        image: '/gallery/settings.png',
-        tag: 'Customization'
+        title: 'Advanced Customization',
+        description: 'Fine-tune your vault. Configure auto-lock timers, strict clipboard clearing, and intruder protection to match your specific workflow.',
+        image: '/gallery/settings-auto-lock.png',
+        tag: 'Control'
     }
 ];
 

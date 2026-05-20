@@ -34,22 +34,22 @@ const Security = () => {
                             <li className="security-item glass-panel">
                                 <ServerOff size={24} className="sec-icon icon-red" />
                                 <div>
-                                    <h4>Zero Cloud Architecture</h4>
-                                    <p>There is no backend, no sync server, and no cloud database. Everything is written purely to your local device disk.</p>
+                                    <h4>Zero-Knowledge Cloudless Model</h4>
+                                    <p>Tamga never sends your credentials to the internet. There is no backend, no sync server, and no cloud database. Everything is written purely to your local disk.</p>
                                 </div>
                             </li>
                             <li className="security-item glass-panel">
                                 <Cpu size={24} className="sec-icon icon-green" />
                                 <div>
-                                    <h4>Military-Grade Crypto API</h4>
-                                    <p>Uses native Web Crypto APIs (SubtleCrypto) to ensure state-of-the-art AES-256-GCM encryption without relying on heavy third-party libs.</p>
+                                    <h4>Extensive PBKDF2 Derivations</h4>
+                                    <p>Your global Master Password runs through rigorous PBKDF2 derivations to create an unlocking key. The actual vault files are encrypted via local AES-GCM (256-bit).</p>
                                 </div>
                             </li>
                             <li className="security-item glass-panel">
                                 <Database size={24} className="sec-icon icon-blue" />
                                 <div>
-                                    <h4>JSON Encrypted Blocks</h4>
-                                    <p>Your passwords, tokens, and environments are serialized to JSON, encrypted as a single unreadable block, and stored locally.</p>
+                                    <h4>Native Web Crypto API</h4>
+                                    <p>Powered by the standard, robust SubtleCrypto API. Built completely standalone running locally on an Electron engine for maximum security.</p>
                                 </div>
                             </li>
                         </ul>

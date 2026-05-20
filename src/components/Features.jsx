@@ -1,31 +1,43 @@
 import React from 'react';
-import { KeyRound, Smartphone, FileCode2, ScanLine } from 'lucide-react';
+import { KeyRound, Smartphone, FileCode2, ScanLine, Network, EyeOff, FolderTree } from 'lucide-react';
 import './Features.css';
 
 const features = [
     {
-        title: 'Password Management',
-        description: 'Create strong, complex passwords and store them securely in an encrypted vault organized by platform and username.',
+        title: 'The Ultimate Developer Vault',
+        description: 'Create strong passwords, store digital passkeys, and manage TOTP codes locally. Never leave .env files exposed in plain text again.',
         icon: <KeyRound size={24} />,
         color: '#00ff88'
     },
     {
-        title: 'Desktop 2FA (TOTP)',
-        description: 'A complete alternative to mobile apps. Generate two-factor authentication codes directly on your desktop securely.',
-        icon: <Smartphone size={24} />,
-        color: '#00b8ff'
-    },
-    {
-        title: 'Authy/Google Auth Migration',
-        description: 'Directly decode and import all your accounts from Google Authenticator export QR codes in one single scan.',
+        title: 'Google Auth Importer',
+        description: 'Use your webcam or screenshots to decode Google Authenticator\'s export QR codes and pull dozens of accounts into Tamga instantly.',
         icon: <ScanLine size={24} />,
         color: '#9d00ff'
     },
     {
         title: 'Developer .env Security',
-        description: 'Never leave sensitive API keys in plain text again. Store developer .env files safely in your encrypted digital seal.',
+        description: 'Safely store, manage, and toggle between your .env files for different projects without exposing secrets in your codebase.',
         icon: <FileCode2 size={24} />,
         color: '#ff0055'
+    },
+    {
+        title: 'Advanced Relational Linking',
+        description: 'Connect multiple assets. Enter the interactive Graph View to see a beautiful node-and-edge flowchart of how your credentials are interconnected.',
+        icon: <Network size={24} />,
+        color: '#00b8ff'
+    },
+    {
+        title: 'Shift-to-Merge Groups',
+        description: 'Hold the Shift key while dropping an item to nest them together into custom logical folders. Readjust, disband, and rename groups easily.',
+        icon: <FolderTree size={24} />,
+        color: '#ffb800'
+    },
+    {
+        title: 'Privacy Screen (Blur Mode)',
+        description: 'Sharing your screen on a Zoom call? Enable Blur Mode to instantly shroud all your passwords and keys behind a frosted glass layer.',
+        icon: <EyeOff size={24} />,
+        color: '#ff00aa'
     }
 ];
 

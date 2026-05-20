@@ -11,7 +11,7 @@
     /* Pill shape */
     padding: 0 1.5rem;
     border: 1px solid var(--surface-border);
-    background: rgba(11, 15, 25, 0.6);
+    background: var(--header-bg);
 }
 
 .header-container {
@@ -88,7 +88,7 @@
 
 .btn-primary {
     background: var(--accent-gradient);
-    color: #000;
+    color: var(--btn-primary-text);
     border: none;
     box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
 }
